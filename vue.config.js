@@ -4,12 +4,14 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = defineConfig({
+  publicPath: "/web",
   transpileDependencies: true,
   productionSourceMap: false,
   devServer: {
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
+        // target: 'http://192.168.1.104/api',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
