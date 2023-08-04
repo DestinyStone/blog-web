@@ -4,7 +4,6 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = defineConfig({
-  publicPath: "/web",
   transpileDependencies: true,
   productionSourceMap: false,
   devServer: {

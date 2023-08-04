@@ -19,6 +19,7 @@ import infiniteScroll from 'vue3-infinite-scroll-better'
 import v3ImgPreview from 'v3-img-preview'
 import 'mavon-editor/dist/css/index.css'
 import api from './api/api'
+import cookies from "js-cookie"
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -42,4 +43,7 @@ plugins.forEach((plugin) => {
 registerSvgIcon(app)
 registerObSkeleton(app)
 app.mount('#app')
+
+i18n.global.locale = cookies.get('locale') ? cookies.get('locale') : "cn";
+
 api.report()
